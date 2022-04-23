@@ -1,0 +1,1 @@
+ramMem_sim_netlist.vhdl,vhdl,xil_defaultlib,../../../../procesador.srcs/sources_1/ip/ramMem/ramMem_sim_netlist.vhdl,

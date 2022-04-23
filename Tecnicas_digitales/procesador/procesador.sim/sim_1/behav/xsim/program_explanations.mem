@@ -1,0 +1,85 @@
+-------------------------------------------------------------------------------
+-- PROGRAMA por73
+-------------------------------------------------------------------------------
+
+Este programa agarra dos números A y B.
+El primero lo multiplica por 2 y lo guarda en la RAM.
+El segundo lo multipla por 3 y lo guarda en la RAM.
+Luego, resta B - A y devuelve por el puerto de salida A*2,B*3, B*3-A*2.
+
+00300000            A;0         --Lectura del puerto y guardado en la posición "0" de la RAM
+
+00130000            0;0         --Suma del número guardado en "0" en la RAM.
+                    0;0
+                    
+00130000            0;0         --Suma del número guardado en "0" en la RAM.
+                    0;0
+                    
+00320001            0;0         --Guardado del ACC en la pos "1" de la RAM.
+                    
+00300002            B;0         --Lectura del puerto y guardado en la pos "2" de la RAM.
+                    
+00160400            0;0         --Reinicio del acumulador, igualándolo al literal "0"
+                    
+00130002            0;0         --Suma del número guardado en "2" en la RAM
+                    0;0
+                    
+00130002            0;0         --Suma del número guardado en "2" en la RAM
+                    0;0
+                    
+00130002            0;0         --Suma del número guardado en "2" en la RAM
+                    0;0
+                    
+00320003            0;0         --Guardado del ACC en la pos "3" de la RAM.
+
+00140001            0;0         --Resta del ACC (B*3) y el valor en la pos "1" de la RAM (A*2)
+                    0;0
+                    
+00320004            0;0         --Guardado del ACC en la pos "4" de la RAM.
+
+00310001            0;0         --Escritura en el puerto del número en la pos "1" de la RAM.
+                    0;A*2                   
+                   
+00310003            0;A*2       --Escritura en el puerto del número en la pos "3" de la RAM.
+                    0;B*3       
+                    
+00310004            0;B*3       --Escritura en el puerto del número en la pos "4" de la RAM.
+                    0;B*3-A*2
+                    0;B*3-A*2   --Placebo  
+                    
+                    
+-------------------------------------------------------------------------------
+-- PROGRAMA jmp_test
+-------------------------------------------------------------------------------
+
+Este programa suma 3 veces el literal "43", de modo que a la tercera vez haya overflow. Va a guardar este dato en memoria y
+luego de eso, salta a la posición "8" de la memoria, donde va a chequear si el número es negativo (que lo es), y va a saltar
+a la posición "F" de la memoria, donde va a escribir en el port de salida el valor que guardo antes (43*3 = -127).
+
+0013042B            0;0         --Suma del literal "0x2B = 43".  
+      
+0013042B            0;0         --Idem.
+
+0013042B            0;0         --Idem.
+
+00320000            0;0         --Escritura del ACC en la pos "0" de la RAM.
+
+00210008            0,0         --Salto a la pos de memoria "8".
+
+00000000
+00000000
+00000000
+
+0023000f            0;0         --Pos de memoria 8. Salto a la pos "F".
+
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+
+00000000            0;0         --Pos "F" de la memoria. NOP de prueba.
+
+00310000            0;0         --Escritura en el port de la pos de la RAM "0".
+                    0;-127                  

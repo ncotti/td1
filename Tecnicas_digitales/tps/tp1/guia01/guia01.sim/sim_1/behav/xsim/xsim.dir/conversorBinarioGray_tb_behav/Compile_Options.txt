@@ -1,0 +1,1 @@
+-wto "b73dfa5bd4b3430d89831ed4bad69c86" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "conversorBinarioGray_tb_behav" "xil_defaultlib.conversorBinarioGray_tb" -log "elaborate.log" 

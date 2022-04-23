@@ -1,0 +1,4 @@
+xpm_memory.sv,systemverilog,xpm,../../../../../../../../../../../tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,
+xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../../../../../tools/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_VCOMP.vhd,
+ramMem_sim_netlist.vhdl,vhdl,xil_defaultlib,../../../../procesador.srcs/sources_1/ip/ramMem/ramMem_sim_netlist.vhdl,
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,15 @@
+# Ignore all 
+* 
+
+# Unignore all with extensions *.vhd  *.gitignore *.xpr
+!*.vhd 
+!*.xpr
+!*.gitignore
+!*.pdf
+!primer_parcial_2021/DOC.txt
+!*.coe
+!*.txt
+!SetDeInstruccion.xlsx
+!procesador_mde_mealy.jpg
+!*.mem
+!*/
